@@ -22,9 +22,69 @@ To write a Python program that reads two matrices from the user and performs mat
 ---
 
 ## 💻 PROGRAM:
-ADD CODE HERE
+
+def create_matrix(r, c):
+
+    matrix = []
+    
+    print("Enter matrix elements row-wise:")
+    
+    for i in range(r):
+    
+        row = list(map(int, input().split()))
+        
+        matrix.append(row)
+        
+    return matrix
+
+r = int(input("Enter number of rows: "))
+
+c = int(input("Enter number of columns: "))
+
+print("\nEnter Matrix A:")
+
+A = create_matrix(r, c)
+
+print("\nEnter Matrix B:")
+
+B = create_matrix(r, c)
+
+C = []
+
+for i in range(r):
+
+    row = []
+    
+    for j in range(c):
+    
+        row.append(A[i][j] - B[i][j])
+        
+    C.append(row)
+
+
+print("\nResultant Matrix (A - B):")
+
+for row in C:
+
+    print(row)
+
 
 ## OUTPUT:
+Enter number of rows: 2
 
+Enter number of columns: 2
+
+Enter Matrix A:
+1 2
+3 4
+
+Enter Matrix B:
+4 3
+2 1
+
+Resultant Matrix (A - B):
+[-3, -1]
+[1, 3]
 ## RESULT:
+The program successfully performs matrix subtraction (A − B) by subtracting corresponding elements of two matrices and storing the result in a new matrix.
 
